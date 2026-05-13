@@ -69,7 +69,7 @@ Essa organização permitirá que cada parte do sistema funcione de maneira inde
 
 ---
 
-**Figura da Arquitetura**:
+### Figura da Arquitetura
 
 
 
