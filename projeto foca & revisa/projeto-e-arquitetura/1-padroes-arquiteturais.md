@@ -73,7 +73,9 @@ Essa organização permitirá que cada parte do sistema funcione de maneira inde
 
 <img width="1920" height="1080" alt="ha" src="https://github.com/user-attachments/assets/2c0db85c-1e60-4a60-ae9f-ee82073c79c9" />
 
+
 **1. Camada de Apresentação (Interface do Usuário / UI)**
+
 É a camada visual com a qual o usuário interage diretamente. Sua principal responsabilidade é capturar as ações do usuário e renderizar as informações processadas pelas camadas inferiores.
  Timer Pomodoro: Interface visual do cronômetro para gerenciamento do tempo de foco.
  Flashcards: Telas de exibição, criação e revisão dos cartões de memória.
@@ -82,6 +84,7 @@ Essa organização permitirá que cada parte do sistema funcione de maneira inde
 
  
 **2. Camada de Lógica de Negócio (Business Logic Layer)**
+
 O "cérebro" do aplicativo. Esta camada recebe os dados da Interface do Usuário, aplica as regras de negócio e decide o que deve ser enviado para persistência ou como as informações devem ser calculadas.
  Controle de tempo de estudo: Gerencia as regras do Pomodoro (tempo de foco, pausas curtas e longas).
  Gerenciamento de flashcard: Controla algoritmos de repetição espaçada e organização dos cartões.
@@ -90,6 +93,7 @@ O "cérebro" do aplicativo. Esta camada recebe os dados da Interface do Usuário
 
  
 **3. Camada de Dados (Data Layer)**
+
 Camada responsável por estruturar e manipular os dados locais da aplicação antes de enviá-los para a nuvem ou utilizá-los na lógica.
  Matérias: Estrutura das disciplinas cadastradas.
  Sessões de estudo: Histórico e registros de tempos focados.
@@ -98,6 +102,7 @@ Camada responsável por estruturar e manipular os dados locais da aplicação an
 
  
 **Integração com o Firebase**
+
 Para garantir que o usuário não perca seus dados e possa acessá-los de múltiplos dispositivos, a aplicação se conecta diretamente ao Firebase:
  Sincronização e Armazenamento: A Camada de Dados envia e recebe informações do banco de dados NoSQL do Firebase em tempo real.
  Autenticação e Segurança: O Firebase gerencia o login dos usuários, garantindo que a Camada de Apresentação exiba apenas os dados pertencentes ao usuário autenticado.
