@@ -1,6 +1,6 @@
 <img width="1600" height="928" alt="WhatsApp Image 2026-05-30 at 09 25 09" src="https://github.com/user-attachments/assets/44d4b3ab-1d6a-4564-866e-527ffaa6d5d9" />
 
-##Explicação do diagrama.
+##Explicação do diagrama.##
 
 1. Componentes de Interface e Entrada (Clientes do Sistema)
 No topo do diagrama, encontramos os componentes de interface: Auth UI, Pomodoro UI, Flashcard UI, Agenda UI e Subject UI.
