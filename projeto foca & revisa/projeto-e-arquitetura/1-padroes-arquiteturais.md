@@ -71,7 +71,8 @@ Essa organização permitirá que cada parte do sistema funcione de maneira inde
 
 ## Figura da Arquitetura
 
-<img width="1920" height="1080" alt="ha" src="https://github.com/user-attachments/assets/2c0db85c-1e60-4a60-ae9f-ee82073c79c9" />
+<img width="1600" height="900" alt="WhatsApp Image 2026-06-01 at 10 49 16" src="https://github.com/user-attachments/assets/73533d14-3723-4f1e-aaa5-3b8e04156fe4" />
+
 
 
 **1. Camada de Apresentação (Interface do Usuário / UI)**
@@ -101,8 +102,6 @@ Camada responsável por estruturar e manipular os dados locais da aplicação an
  Configurações do sistema: Preferências do usuário (temas, tempos customizados do Pomodoro, etc.).
 
  
-**Integração com o Firebase**
+**Integração com o Supabase**
 
-Para garantir que o usuário não perca seus dados e possa acessá-los de múltiplos dispositivos, a aplicação se conecta diretamente ao Firebase:
- Sincronização e Armazenamento: A Camada de Dados envia e recebe informações do banco de dados NoSQL do Firebase em tempo real.
- Autenticação e Segurança: O Firebase gerencia o login dos usuários, garantindo que a Camada de Apresentação exiba apenas os dados pertencentes ao usuário autenticado.
+Para garantir que o usuário não perca seus dados e possa acessá-los de múltiplos dispositivos, a aplicação se conecta diretamente ao Supabase: Sincronização e Armazenamento: A Camada de Dados envia e recebe informações do banco de dados PostgreSQL do Supabase em tempo real. Autenticação e Segurança: O Supabase gerencia o login dos usuários, garantindo que a Camada de Apresentação exiba apenas os dados pertencentes ao usuário autenticado.
