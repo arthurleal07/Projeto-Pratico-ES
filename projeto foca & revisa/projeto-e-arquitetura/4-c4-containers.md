@@ -127,18 +127,5 @@ A utilização do Diagrama de Containers no projeto Foca e Revisa permite:
 - Auxiliar na manutenção e evolução da aplicação;
 - Servir como referência para futuras implementações.
 
-## Rastreabilidade com Histórias do Usuário
 
-O objetivo desta seção é demonstrar, de forma clara e
-verificável, como as decisões arquiteturais estão diretamente
-relacionadas as histórias do usuário definidas no nosso TP1.
-
-**Diagrama de containers com rastreabilidade**
-
-<img width="1403" height="1303" alt="Containers com restreamento drawio (1)" src="https://github.com/user-attachments/assets/aee5283f-7d44-4c61-a4a1-b18aa82492b8" />
-
-
-## Conclusão
-
-O Diagrama de Containers do Foca e Revisa apresenta uma visão detalhada da arquitetura da aplicação, demonstrando como o App Flutter, o Painel Administrativo, o Backend Node.js, o Banco de Dados PostgreSQL e os sistemas externos trabalham de forma integrada para fornecer uma plataforma de estudos moderna, segura e escalável.
 
