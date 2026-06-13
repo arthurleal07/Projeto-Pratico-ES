@@ -25,6 +25,31 @@ No diagrama de containers, cada uma dessas histórias foi identificada por meio 
 
 <img width="1403" height="1303" alt="Containers com restreamento drawio (1)" src="https://github.com/user-attachments/assets/0c13d0c0-594a-4fd9-881b-9674cea0f65e" />
 
+## Detalhamento por partes
+
+### Recorte 1 — Autenticação e Sincronização (HU01)
+
+<img width="838" height="494" alt="RECORTE 1" src="https://github.com/user-attachments/assets/18c49aa7-fc2d-4b5f-8fd2-1449bc036165" />
+
+Este recorte destaca os componentes envolvidos no processo de autenticação e sincronização das informações do estudante. O aplicativo móvel utiliza o serviço de autenticação para validar a identidade do usuário e permitir o acesso seguro aos dados armazenados. Após a validação, o backend realiza a comunicação com o banco de dados, possibilitando a recuperação e atualização das informações em diferentes dispositivos.
+
+### Recorte 2 — Estatísticas e Histórico (HU02 e HU03)
+
+<img width="489" height="555" alt="RECORTE 2" src="https://github.com/user-attachments/assets/d5f5c07f-520b-4742-b7d8-d0b2d3eaaf00" />
+
+Este recorte apresenta os componentes responsáveis pela consulta e processamento das informações de estudo do usuário. O aplicativo solicita os dados ao backend, que acessa os registros armazenados no banco de dados para recuperar informações sobre sessões realizadas, tempo de estudo e demais métricas. Os dados processados são então retornados para exibição ao estudante.
+
+### Recorte 3 — Registro de Sessões (HU04)
+
+<img width="489" height="555" alt="RECORTE 2" src="https://github.com/user-attachments/assets/68a848e3-b990-470e-bf43-ff87d91888a5" />
+
+Este recorte evidencia o fluxo utilizado para o registro das atividades realizadas pelo estudante. As informações enviadas pelo aplicativo são processadas pelo backend e persistidas no banco de dados, garantindo o armazenamento das sessões de estudo e sua associação às respectivas matérias cadastradas no sistema.
+
+### Recorte 4 — Exportação de Dados (HU05)
+
+<img width="258" height="548" alt="RECORTE 4" src="https://github.com/user-attachments/assets/eb646bbe-a500-4874-8abe-51b3886a7d6f" />
+
+Este recorte destaca os componentes envolvidos na geração de arquivos para exportação das informações do usuário. O backend consulta os dados armazenados no banco de dados, realiza o processamento necessário para a geração dos arquivos em formatos compatíveis e disponibiliza o resultado para o aplicativo, permitindo que o estudante utilize as informações em análises externas.
 
 ## Diagrama de Componente com rastreabilidade 
 
