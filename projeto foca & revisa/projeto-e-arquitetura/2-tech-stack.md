@@ -29,7 +29,7 @@ O Tech Stack Map é importante porque evita decisões técnicas dispersas e sem 
  
 ---
 
-## Explicação de cada tecnologia
+## Recorte de cada tecnologia por camadas
 
 ### Front end
 
