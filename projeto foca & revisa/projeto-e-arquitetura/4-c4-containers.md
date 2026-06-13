@@ -15,117 +15,30 @@ A arquitetura é composta pelos seguintes containers:
 <img width="1291" height="651" alt="Diagrama containers" src="https://github.com/user-attachments/assets/6bf6db8e-2949-47b5-9208-e5c1a454256f" />
 
 
-### App Flutter
+# Detalhamento por Partes
 
-O aplicativo mobile desenvolvido em Flutter é utilizado pelos estudantes para acessar os recursos da plataforma.
+Nessa seção fiz alguns recortes do diagrama de containers para explicação
 
-Principais funcionalidades:
+## Figura 1 – Camada de Aplicação Móvel
 
-- Sessões de estudo utilizando a técnica Pomodoro;
-- Criação e revisão de flashcards;
-- Agenda semanal de estudos;
-- Relatórios de desempenho;
-- Sistema de conquistas;
-- Gerenciamento da conta do usuário.
+<img width="860" height="597" alt="RECORTE 1" src="https://github.com/user-attachments/assets/c451a163-6e81-4228-ab18-434c6833b962" />
 
-### Painel Administrativo
+Este recorte destaca os componentes envolvidos no processo de autenticação do estudante e sincronização de seus dados. O usuário acessa o aplicativo móvel, que utiliza o Supabase Auth para validação da identidade. Após a autenticação, o backend realiza a leitura e persistência das informações no banco de dados, permitindo que os dados sejam recuperados em diferentes dispositivos.
 
-O Painel Administrativo, desenvolvido em React, é utilizado pelos administradores do sistema para realizar o gerenciamento da plataforma.
+## Figura 2 – Camada de Serviços e Persistência
 
-Entre suas responsabilidades estão:
+<img width="460" height="950" alt="RECORTE 2" src="https://github.com/user-attachments/assets/dc86c6a0-4ef8-467d-ba8c-2e7f88d97e0e" />
 
-- Gerenciamento de usuários;
-- Controle de planos gratuitos e premium;
-- Monitoramento de métricas do aplicativo;
-- Administração de conteúdos e dados da plataforma.
+Este recorte apresenta o núcleo da arquitetura da plataforma, composto pelo aplicativo móvel, backend e banco de dados. O App Flutter envia requisições para a API REST implementada em Node.js, responsável pelo processamento das regras de negócio. O backend realiza operações de leitura e escrita no banco de dados, garantindo o armazenamento e a recuperação das informações utilizadas pelo sistema.
 
-### Backend Node.js + Express
+## Figura 3 – Camada de Autenticação
 
-O Backend representa o núcleo da aplicação e disponibiliza uma API REST responsável por processar as regras de negócio do sistema.
+<img width="1449" height="689" alt="RECORTE 3" src="https://github.com/user-attachments/assets/e572392a-b4bc-4941-94e5-7cde779e9e5d" />
 
-Entre os principais serviços implementados estão:
+Este recorte destaca os componentes responsáveis pelo controle de acesso à plataforma. O processo de autenticação é realizado por meio do Supabase Auth, que valida as credenciais dos usuários e emite tokens de autenticação utilizados pelo aplicativo e pelo painel administrativo. Essa integração garante a identificação segura dos usuários e o acesso controlado aos recursos do sistema.
 
-- TimerService;
-- FlashcardService;
-- AgendaService;
-- ProgressService;
-- AchievementService;
-- SubscriptionService.
+## Figura 4 – Integrações Externas
 
-Além disso, o backend é responsável por:
+<img width="1449" height="689" alt="RECORTE 4" src="https://github.com/user-attachments/assets/64f7baf6-7361-4ded-a800-99d5cd558490" />
 
-- Receber requisições do aplicativo e do painel administrativo;
-- Validar autenticações;
-- Processar assinaturas premium;
-- Integrar serviços externos;
-- Gerenciar notificações;
-- Persistir dados no banco de dados.
-
-### Banco de Dados PostgreSQL (Supabase)
-
-O banco de dados é responsável pelo armazenamento persistente das informações da plataforma.
-
-Entre os dados armazenados estão:
-
-- Usuários;
-- Flashcards;
-- Sessões de estudo;
-- Agendas;
-- Conquistas;
-- Assinaturas;
-- Estatísticas de desempenho.
-
-## Sistemas Externos Integrados
-
-Para ampliar as funcionalidades da aplicação, o sistema utiliza alguns serviços externos especializados.
-
-### Supabase Auth
-
-Responsável pela autenticação e autorização dos usuários.
-
-Suas funções incluem:
-
-- Login com e-mail e senha;
-- Login com Google OAuth;
-- Emissão e validação de Tokens JWT;
-- Controle seguro de acesso aos recursos da plataforma.
-
-### Firebase Cloud Messaging (FCM)
-
-Utilizado para o envio de notificações push aos usuários.
-
-Exemplos:
-
-- Lembretes de estudo;
-- Início de sessões Pomodoro;
-- Alertas de revisões pendentes;
-- Metas semanais.
-
-### Stripe
-
-Responsável pelo processamento de pagamentos dos planos premium.
-
-Suas funcionalidades incluem:
-
-- Cobrança recorrente;
-- Pagamentos via Pix;
-- Pagamentos por cartão de crédito;
-- Comunicação com o backend através de webhooks.
-
-### Google Calendar
-
-Permite a sincronização das agendas de estudo do aplicativo com o calendário pessoal do usuário, facilitando a organização das atividades acadêmicas.
-
-## Benefícios do Diagrama para o Projeto
-
-A utilização do Diagrama de Containers no projeto Foca e Revisa permite:
-
-- Visualizar a arquitetura completa da solução;
-- Compreender a responsabilidade de cada container;
-- Facilitar a comunicação entre desenvolvedores e stakeholders;
-- Documentar integrações com sistemas externos;
-- Auxiliar na manutenção e evolução da aplicação;
-- Servir como referência para futuras implementações.
-
-
-
+Este recorte apresenta os serviços externos integrados à plataforma. O Firebase FCM é utilizado para o envio de notificações push aos usuários, o Stripe é responsável pelo processamento de assinaturas e pagamentos, enquanto o Google Calendar possibilita a sincronização de eventos da aplicação com calendários externos. Essas integrações ampliam as funcionalidades do sistema sem a necessidade de implementação interna desses serviços.
