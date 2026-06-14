@@ -24,6 +24,34 @@ O diagrama apresentado na sequência destaca o percurso dessas histórias pelos 
 
 <img width="1536" height="1024" alt="diagrama contexto com rastreabilidade" src="https://github.com/user-attachments/assets/4c6b32eb-133f-41fa-b1ba-4f9333ce809b" />
 
+## Detalhamento por partes
+
+### Figura 1 – Sincronização e Autenticação (US01)
+
+Este recorte destaca os componentes responsáveis pela autenticação do estudante e sincronização de seus dados. O sistema utiliza o Supabase Auth para validação das credenciais e o Supabase para armazenamento e recuperação das informações da plataforma.
+<img width="1454" height="897" alt="Design sem nome" src="https://github.com/user-attachments/assets/f137d4f0-9dbe-423a-85ad-08d419f4dc8f" />
+
+### Figura 2 – Estatísticas e Histórico de Estudos (US02 e US03)
+
+Este recorte apresenta os elementos responsáveis pela consulta e processamento dos dados de estudo. As informações armazenadas são utilizadas para geração de métricas, relatórios e histórico de atividades do estudante.
+<img width="2546" height="906" alt="Design sem nome (1)" src="https://github.com/user-attachments/assets/9d88cc75-53da-44ad-815c-a77dd5774fd5" />
+<img width="1679" height="906" alt="Design sem nome (2)" src="https://github.com/user-attachments/assets/5b1bc71b-2abd-4401-a1a0-73ee0bd092f1" />
+
+
+### Figura 3 – Registro de Sessões de Estudo (US04)
+
+Este recorte evidencia o fluxo de armazenamento das sessões realizadas pelo estudante, permitindo sua associação às matérias cadastradas e seu posterior acompanhamento pela plataforma.
+
+<img width="1679" height="906" alt="Design sem nome (3)" src="https://github.com/user-attachments/assets/992689b9-608c-488b-95a2-f69a6e384136" />
+
+
+### Figura 4 – Exportação de Dados (US05)
+
+Este recorte destaca os componentes envolvidos na recuperação e disponibilização das informações do usuário para exportação, permitindo a utilização dos dados em análises externas.
+
+<img width="851" height="1363" alt="Design sem nome (4)" src="https://github.com/user-attachments/assets/c63f406b-9511-4e00-ba08-356cb8d9c4d9" />
+
+
 ## Diagrama de Containers com rastreabilidade 
 
 ## Rastreabilidade das Histórias de Usuário
