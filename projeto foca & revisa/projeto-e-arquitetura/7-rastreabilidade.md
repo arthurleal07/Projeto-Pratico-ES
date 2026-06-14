@@ -4,6 +4,25 @@ O objetivo desta seção é demonstrar, de forma clara e
 verificável, como as decisões arquiteturais estão diretamente
 relacionadas as histórias do usuário definidas no nosso TP1.
 
+## Diagrama de Contexto com rastreabilidade 
+
+## Histórias de Usuário Selecionadas para Rastreabilidade
+
+A rastreabilidade arquitetural foi realizada a partir de cinco histórias de usuário consideradas representativas para o funcionamento do sistema. A seleção priorizou funcionalidades que percorrem diferentes componentes da arquitetura e que evidenciam a interação entre os principais elementos da solução.
+
+A **US01 – Sincronizar dados entre dispositivos** foi escolhida por envolver autenticação, armazenamento e recuperação de informações, demonstrando como os dados do usuário permanecem disponíveis independentemente do dispositivo utilizado.
+
+A **US02 – Visualizar estatísticas de estudo** representa o uso de informações geradas ao longo da utilização do sistema, permitindo observar a integração entre os dados armazenados e os mecanismos responsáveis pela geração de métricas e relatórios.
+
+A **US03 – Visualizar histórico de estudos** evidencia o processo de consulta e apresentação de informações registradas anteriormente, sendo uma funcionalidade diretamente relacionada ao gerenciamento dos dados acadêmicos do estudante.
+
+A **US04 – Vincular sessões a matérias** foi incluída por representar uma operação de cadastro e associação de informações, mostrando como os dados produzidos durante o uso do aplicativo são organizados e persistidos na plataforma.
+
+Por fim, a **US05 – Exportar dados (CSV/PDF)** foi selecionada por demonstrar um fluxo mais abrangente, no qual informações armazenadas pelo sistema são processadas e disponibilizadas ao usuário em formatos externos para consulta e análise.
+
+O diagrama apresentado na sequência destaca o percurso dessas histórias pelos componentes arquiteturais envolvidos, permitindo identificar de forma objetiva como cada requisito é suportado pela estrutura da aplicação.
+
+<img width="1536" height="1024" alt="diagrama contexto com rastreabilidade" src="https://github.com/user-attachments/assets/4c6b32eb-133f-41fa-b1ba-4f9333ce809b" />
 
 ## Diagrama de Containers com rastreabilidade 
 
