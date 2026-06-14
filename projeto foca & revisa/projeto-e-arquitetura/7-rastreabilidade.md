@@ -42,14 +42,15 @@ Este recorte apresenta os elementos responsáveis pela consulta e processamento 
 
 Este recorte evidencia o fluxo de armazenamento das sessões realizadas pelo estudante, permitindo sua associação às matérias cadastradas e seu posterior acompanhamento pela plataforma.
 
-<img width="1679" height="906" alt="Design sem nome (3)" src="https://github.com/user-attachments/assets/992689b9-608c-488b-95a2-f69a6e384136" />
+<img width="2115" height="1158" alt="### Figura X – Registro de Sessões de Estudo (US04)" src="https://github.com/user-attachments/assets/55b4a665-76b0-4a08-8986-2df9fcb32649" />
+
 
 
 ### Figura 4 – Exportação de Dados (US05)
 
 Este recorte destaca os componentes envolvidos na recuperação e disponibilização das informações do usuário para exportação, permitindo a utilização dos dados em análises externas.
 
-<img width="851" height="1363" alt="Design sem nome (4)" src="https://github.com/user-attachments/assets/c63f406b-9511-4e00-ba08-356cb8d9c4d9" />
+<img width="2115" height="1206" alt="Recorte 4 US05 Exportar Dados" src="https://github.com/user-attachments/assets/57793347-c792-4097-953d-85560b85fab9" />
 
 
 ## Diagrama de Containers com rastreabilidade 
