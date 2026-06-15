@@ -1,3 +1,20 @@
+# Diagrama de Componentes: o que é e por que ele importa no nosso projeto
+
+## O que é um diagrama de componentes?
+
+O diagrama de componentes é um dos diagramas estruturais da UML (Unified Modeling Language) usado para representar a organização e as dependências entre as partes que formam um sistema de software. Em vez de mostrar classes, objetos ou fluxos de execução em detalhe, ele foca em algo mais alto nível: como o sistema está dividido em módulos (componentes) e como esses módulos se conectam entre si por meio de interfaces.
+
+Um "componente" pode ser entendido como uma unidade modular e substituível do sistema, que encapsula sua implementação interna e expõe apenas o que é necessário para o resto da aplicação usar. Exemplos comuns de componentes em um app são:
+
+
+- Módulo de autenticação
+- API de pagamentos
+- Serviço de notificações
+- Camada de acesso a dados (banco de dados)
+- Interface de usuário (frontend)
+- Serviços externos integrados (ex: gateways de pagamento, mapas, etc.)
+
+### Imagem do Diagrama
 <img width="1600" height="928" alt="WhatsApp Image 2026-05-30 at 09 25 09" src="https://github.com/user-attachments/assets/44d4b3ab-1d6a-4564-866e-527ffaa6d5d9" />
 
 **Explicação do diagrama.**
