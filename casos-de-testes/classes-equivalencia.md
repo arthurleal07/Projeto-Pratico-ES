@@ -1,3 +1,6 @@
+## HISTÓRIA  DE USUÁRIO, ACOMPANHADA DE CRITÉRIO DE ACEITAÇÃO E REGRA DE NEGÓCIO ACOSSIADAS
+
+
 ## US01 – Timer Pomodoro
 
 | Campo | Descrição |
@@ -136,16 +139,7 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
+## TABELA DE CLASSES DE EQUIVALÊNCIA
 
 
 | Caso de Uso | Condição de Entrada | Classe Válida | Classe Inválida | Classe Inválida |
