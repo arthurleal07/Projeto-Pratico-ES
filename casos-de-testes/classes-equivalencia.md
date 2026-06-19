@@ -139,7 +139,7 @@
 ## TABELA DE CLASSES DE EQUIVALÊNCIA
 
 
-| História do usuário | Condição de Entrada | Classe Válida | Classe Inválida | Classe Inválida |
+| História do Usuário | Condição de Entrada | Classe Válida | Classe Inválida | Classe Inválida |
 |---|---|---|---|---|
 | US01 — Timer Pomodoro | Tempo do timer | Tempo entre 15 e 60 min (1) | Tempo menor que 15 min (2) | Tempo maior que 60 min (3) |
 | US01 — Timer Pomodoro | Controle do timer | Timer iniciado/pausado/resetado corretamente (4) | Iniciar timer já em execução (5) | Resetar timer inexistente (6) |
