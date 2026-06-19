@@ -78,7 +78,31 @@
 
 ---
 
-## US19 – Histórico de Sessões
+## US18 – Cadastro de Senha Segura
+
+| Campo | Descrição |
+|---------|---------|
+| **História do Usuário** | Enquanto estudante, quero cadastrar uma senha segura seguindo os requisitos definidos pelo sistema, para proteger minha conta. |
+| **Critérios de Aceitação** | • A senha deve conter pelo menos uma letra maiúscula.<br>• A senha deve conter pelo menos um número.<br>• A senha deve conter pelo menos um símbolo especial.<br>• A senha deve possuir no máximo 15 caracteres.<br>• O sistema deve validar a senha antes de concluir o cadastro. |
+| **Regras de Negócio** | • Não aceitar senhas sem letra maiúscula.<br>• Não aceitar senhas sem número.<br>• Não aceitar senhas sem símbolo especial.<br>• Não aceitar senhas com mais de 15 caracteres.<br>• Não aceitar senhas vazias ou apenas com espaços.<br>• Exibir mensagem indicando qual requisito não foi atendido. |
+
+## US19 – Seleção do Tipo de Ciclo
+
+| Campo | Descrição |
+|---------|---------|
+| **História do Usuário** | Enquanto usuário, quero selecionar entre um ciclo de Foco e um ciclo de Pausa para alternar entre períodos de estudo e descanso. |
+| **Critérios de Aceitação** | • Exibir as opções "Foco (25 min)" e "Pausa (5 min)".<br>• Atualizar o cronômetro conforme a opção selecionada.<br>• Possuir os estados Iniciar, Pausar e Resetar.<br>• Emitir alerta visual e sonoro ao final do ciclo. |
+| **Regras de Negócio** | • Não permitir alterar o tipo de ciclo durante a execução.<br>• Ciclos de pausa não devem ser contabilizados no histórico.<br>• Ciclos de pausa não devem contar para conquistas. |
+
+## US20 – Sistema de Conquistas Locais
+
+| Campo | Descrição |
+|---------|---------|
+| **História do Usuário** | Enquanto usuário, quero desbloquear insígnias com base no meu histórico de uso acumulado, para acompanhar meu progresso. |
+| **Critérios de Aceitação** | • Exibir a medalha "Primeiro Passo" ao concluir 1 ciclo de foco.<br>• Exibir a medalha "Maratonista" ao concluir 4 ciclos de foco no mesmo dia.<br>• Exibir a medalha "Mestre da Revisão" após a primeira revisão concluída.<br>• As medalhas devem mudar visualmente quando desbloqueadas. |
+| **Regras de Negócio** | • As conquistas devem ser calculadas através de consultas ao histórico local.<br>• Sessões interrompidas ou resetadas não devem contar para conquistas. |
+
+## US21 – Histórico de Sessões
 
 | Campo | Descrição |
 |---------|---------|
@@ -88,33 +112,13 @@
 
 ---
 
-## US20 – Resumo Estatístico Diário
+## US22 – Resumo Estatístico Diário
 
 | Campo | Descrição |
 |---------|---------|
 | **História do Usuário** | Enquanto usuário, quero visualizar o total de tempo focado no dia atual para acompanhar minha meta diária de estudos. |
 | **Critérios de Aceitação** | • Exibir "Tempo de Foco Hoje: X minutos".<br>• Exibir "Ciclos Concluídos: Y".<br>• Atualizar automaticamente após a conclusão de um ciclo. |
 | **Regras de Negócio** | • Considerar apenas ciclos de foco da data atual.<br>• Não considerar pausas.<br>• Não considerar ciclos cancelados pelo usuário. |
-
----
-
-## US21 – Cadastro de Senha Segura
-
-| Campo | Descrição |
-|---------|---------|
-| **História do Usuário** | Enquanto estudante, quero cadastrar uma senha segura seguindo os requisitos definidos pelo sistema, para proteger minha conta. |
-| **Critérios de Aceitação** | • A senha deve conter pelo menos uma letra maiúscula.<br>• A senha deve conter pelo menos um número.<br>• A senha deve conter pelo menos um símbolo especial.<br>• A senha deve possuir no máximo 15 caracteres.<br>• O sistema deve validar a senha antes de concluir o cadastro. |
-| **Regras de Negócio** | • Não aceitar senhas sem letra maiúscula.<br>• Não aceitar senhas sem número.<br>• Não aceitar senhas sem símbolo especial.<br>• Não aceitar senhas com mais de 15 caracteres.<br>• Não aceitar senhas vazias ou apenas com espaços.<br>• Exibir mensagem indicando qual requisito não foi atendido. |
-
----
-
-## US22 – Sistema de Conquistas Locais
-
-| Campo | Descrição |
-|---------|---------|
-| **História do Usuário** | Enquanto usuário, quero desbloquear insígnias com base no meu histórico de uso acumulado, para acompanhar meu progresso. |
-| **Critérios de Aceitação** | • Exibir a medalha "Primeiro Passo" ao concluir 1 ciclo de foco.<br>• Exibir a medalha "Maratonista" ao concluir 4 ciclos de foco no mesmo dia.<br>• Exibir a medalha "Mestre da Revisão" após a primeira revisão concluída.<br>• As medalhas devem mudar visualmente quando desbloqueadas. |
-| **Regras de Negócio** | • As conquistas devem ser calculadas através de consultas ao histórico local.<br>• Sessões interrompidas ou resetadas não devem contar para conquistas. |
 
 ---
 
@@ -128,13 +132,6 @@
 
 ---
 
-## US24 – Seleção do Tipo de Ciclo
-
-| Campo | Descrição |
-|---------|---------|
-| **História do Usuário** | Enquanto usuário, quero selecionar entre um ciclo de Foco e um ciclo de Pausa para alternar entre períodos de estudo e descanso. |
-| **Critérios de Aceitação** | • Exibir as opções "Foco (25 min)" e "Pausa (5 min)".<br>• Atualizar o cronômetro conforme a opção selecionada.<br>• Possuir os estados Iniciar, Pausar e Resetar.<br>• Emitir alerta visual e sonoro ao final do ciclo. |
-| **Regras de Negócio** | • Não permitir alterar o tipo de ciclo durante a execução.<br>• Ciclos de pausa não devem ser contabilizados no histórico.<br>• Ciclos de pausa não devem contar para conquistas. |
 
 
 
