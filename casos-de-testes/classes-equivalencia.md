@@ -150,11 +150,12 @@
 | US07 — Configuração de Tempo | Alteração de tempo | Tempo alterado entre 15 e 60 min (19) | Tempo abaixo de 15 min (20) | Tempo acima de 60 min (21) |
 | US10 — Sessão por Matéria | Seleção de matéria | Sessão vinculada a matéria (22) | Sessão sem matéria (23) | Matéria inválida (24) |
 | US13 — Revisão Manual | Acesso aos flashcards | Flashcards disponíveis para revisão (25) | Nenhum flashcard disponível (26) | Matéria sem flashcards (27) |
-| US19 — Resumo Diário | Contagem de ciclos | Apenas ciclos de foco concluídos (28) | Ciclos de pausa contabilizados (29) | Ciclos cancelados contabilizados (30) |
-| US20 — Cadastro de Senha Segura | Validação da senha | Senha com maiúscula, número e símbolo (31) | Senha sem maiúscula (32) | Senha com mais de 15 caracteres (33) |
-| US21 — Sistema de Conquistas | Verificação de progresso | Conquista desbloqueada corretamente (34) | Sessão incompleta contabilizada (35) | Revisão não concluída contabilizada (36) |
-| US22 — Exclusão de Disciplinas | Exclusão de disciplina | Disciplina sem histórico vinculada removida (37) | Disciplina com histórico vinculado (38) | Disciplina inexistente (39) |
-| US23 — Seleção do Tipo de Ciclo | Alteração de ciclo | Troca de ciclo com timer parado (40) | Troca durante execução (41) | Nenhum ciclo selecionado (42) |
+| US18 — Cadastro de Senha Segura | Validação da senha | Senha com maiúscula, número e símbolo (28) | Senha sem maiúscula (29) | Senha com mais de 15 caracteres (30) |
+| US19 — Histórico de Sessões | Exclusão de registros | Exclusão confirmada de sessão existente (31) | Exclusão cancelada pelo usuário (32) | Exclusão de sessão inexistente (33) |
+| US20 — Sistema de Conquistas Locais | Verificação de progresso | Conquista desbloqueada corretamente (34) | Sessão incompleta contabilizada (35) | Revisão não concluída contabilizada (36) |
+| US21 — Resumo Estatístico Diário | Contagem de ciclos | Apenas ciclos de foco concluídos (37) | Ciclos de pausa contabilizados (38) | Ciclos cancelados contabilizados (39) |
+| US22 — Gerenciamento e Exclusão de Disciplinas | Exclusão de disciplina | Disciplina sem histórico vinculada removida (40) | Disciplina com histórico vinculado (41) | Disciplina inexistente (42) |
+| US23 — Seleção do Tipo de Ciclo | Alteração de ciclo | Troca de ciclo com timer parado (43) | Troca durante execução (44) | Nenhum ciclo selecionado (45) |
 
 
 
