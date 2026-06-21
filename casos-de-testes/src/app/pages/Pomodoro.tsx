@@ -5,15 +5,22 @@ import { Card, CardContent } from "../components/ui/card";
 import { Progress } from "../components/ui/progress";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../components/ui/select";
 
+// Opções de duração da sessão de foco, conforme regra de negócio:
+// "O tempo deve ser configurável entre 15 e 60 minutos."
+const FOCUS_DURATIONS = [15, 20, 25, 30, 35, 40, 45, 50, 55, 60];
+const DEFAULT_FOCUS_MINUTES = 25;
+const BREAK_MINUTES = 5;
+
 export function Pomodoro() {
-  const [minutes, setMinutes] = useState(25);
+  const [focusMinutes, setFocusMinutes] = useState(DEFAULT_FOCUS_MINUTES);
+  const [minutes, setMinutes] = useState(DEFAULT_FOCUS_MINUTES);
   const [seconds, setSeconds] = useState(0);
   const [isActive, setIsActive] = useState(false);
   const [isBreak, setIsBreak] = useState(false);
   const [sessions, setSessions] = useState(0);
   const [subject, setSubject] = useState("matematica");
 
-  const totalSeconds = isBreak ? 5 * 60 : 25 * 60;
+  const totalSeconds = isBreak ? BREAK_MINUTES * 60 : focusMinutes * 60;
   const currentSeconds = minutes * 60 + seconds;
   const progress = ((totalSeconds - currentSeconds) / totalSeconds) * 100;
 
@@ -29,10 +36,10 @@ export function Pomodoro() {
             if (!isBreak) {
               setSessions((prev) => prev + 1);
               setIsBreak(true);
-              setMinutes(5);
+              setMinutes(BREAK_MINUTES);
             } else {
               setIsBreak(false);
-              setMinutes(25);
+              setMinutes(focusMinutes);
             }
           } else {
             setMinutes((m) => m - 1);
@@ -45,12 +52,25 @@ export function Pomodoro() {
     }
 
     return () => clearInterval(interval);
-  }, [isActive, minutes, seconds, isBreak]);
+  }, [isActive, minutes, seconds, isBreak, focusMinutes]);
 
   const handleReset = () => {
     setIsActive(false);
-    setMinutes(isBreak ? 5 : 25);
+    setMinutes(isBreak ? BREAK_MINUTES : focusMinutes);
     setSeconds(0);
+  };
+
+  // Atualiza a duração da sessão de foco escolhida pelo usuário.
+  // Só reflete no relógio na hora se ele ainda não estiver rodando,
+  // para não bagunçar uma sessão já em andamento.
+  const handleFocusDurationChange = (value: string) => {
+    const newFocusMinutes = Number(value);
+    setFocusMinutes(newFocusMinutes);
+
+    if (!isActive && !isBreak) {
+      setMinutes(newFocusMinutes);
+      setSeconds(0);
+    }
   };
 
   const subjects = [
@@ -74,25 +94,49 @@ export function Pomodoro() {
         </p>
       </div>
 
-      {/* Subject Selection */}
+      {/* Subject + Focus Duration Selection */}
       {!isBreak && (
         <Card>
-          <CardContent className="p-4">
-            <label className="text-sm text-muted-foreground mb-2 block">
-              Matéria
-            </label>
-            <Select value={subject} onValueChange={setSubject}>
-              <SelectTrigger>
-                <SelectValue />
-              </SelectTrigger>
-              <SelectContent>
-                {subjects.map((s) => (
-                  <SelectItem key={s.value} value={s.value}>
-                    {s.label}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
+          <CardContent className="p-4 space-y-4">
+            <div>
+              <label className="text-sm text-muted-foreground mb-2 block">
+                Matéria
+              </label>
+              <Select value={subject} onValueChange={setSubject}>
+                <SelectTrigger>
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent>
+                  {subjects.map((s) => (
+                    <SelectItem key={s.value} value={s.value}>
+                      {s.label}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+
+            <div>
+              <label className="text-sm text-muted-foreground mb-2 block">
+                Tempo de foco
+              </label>
+              <Select
+                value={String(focusMinutes)}
+                onValueChange={handleFocusDurationChange}
+                disabled={isActive}
+              >
+                <SelectTrigger>
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent>
+                  {FOCUS_DURATIONS.map((m) => (
+                    <SelectItem key={m} value={String(m)}>
+                      {m} minutos
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
           </CardContent>
         </Card>
       )}
