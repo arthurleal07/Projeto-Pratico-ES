@@ -3,10 +3,15 @@ import { useNavigate } from "react-router";
 import { ArrowLeft, Save } from "lucide-react";
 import { Button } from "../components/ui/button";
 import { Card, CardContent } from "../components/ui/card";
-import { Input } from "../components/ui/input";
 import { Label } from "../components/ui/label";
 import { Textarea } from "../components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "../components/ui/select";
 import { toast } from "sonner";
 
 export function CreateFlashcard() {
@@ -26,9 +31,62 @@ export function CreateFlashcard() {
     { value: "ingles", label: "Inglês" },
   ];
 
+  /*
+    Classes de Equivalência - US03 Criar Flashcards
+
+    CE01 - Pergunta preenchida ---------------- Classe Válida
+    CE02 - Pergunta vazia --------------------- Classe Inválida
+
+    CE03 - Resposta preenchida ---------------- Classe Válida
+    CE04 - Resposta vazia --------------------- Classe Inválida
+
+    CE05 - Matéria válida --------------------- Classe Válida
+    CE06 - Flashcard sem matéria ------------- Classe Inválida
+    CE07 - Matéria inexistente --------------- Classe Inválida
+
+    Regra de Negócio:
+    Todo flashcard deve estar obrigatoriamente vinculado a uma matéria.
+  */
+  const validateFlashcard = (
+    question: string,
+    answer: string,
+    subject: string
+  ) => {
+    const trimmedQuestion = question.trim();
+    const trimmedAnswer = answer.trim();
+    const trimmedSubject = subject.trim();
+
+    // CE02
+    if (!trimmedQuestion) {
+      return "A pergunta não pode estar vazia.";
+    }
+
+    // CE04
+    if (!trimmedAnswer) {
+      return "A resposta não pode estar vazia.";
+    }
+
+    // CE06
+    if (!trimmedSubject) {
+      return "O flashcard deve estar vinculado a uma matéria.";
+    }
+
+    // CE07
+    const subjectExists = subjects.some((s) => s.value === trimmedSubject);
+
+    if (!subjectExists) {
+      return "A matéria selecionada não existe no sistema.";
+    }
+
+    // CE01 + CE03 + CE05
+    return null;
+  };
+
   const handleSave = () => {
-    if (!subject || !question || !answer) {
-      toast.error("Preencha todos os campos");
+    const validationError = validateFlashcard(question, answer, subject);
+
+    if (validationError) {
+      toast.error(validationError);
       return;
     }
 
