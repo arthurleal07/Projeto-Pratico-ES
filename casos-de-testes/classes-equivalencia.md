@@ -158,4 +158,18 @@
 | US23 — Seleção do Tipo de Ciclo | Alteração de ciclo | Troca de ciclo com timer parado (43) | Troca durante execução (44) | Nenhum ciclo selecionado (45) |
 
 
+## TABELA DE CASOS DE TESTE
 
+
+| Casos de Teste | Classes de Equivalência | Entradas | Resultado Esperado |
+|---------------|-------------------------|----------|-------------------|
+| Caso 1 | 1, 4, 7 | Tempo = 25 min, Timer iniciado, 5 flashcards | Operação realizada com sucesso |
+| Caso 2 | 2, 4, 7 | Tempo = 10 min, Timer iniciado, 5 flashcards | Erro: tempo mínimo é 15 min |
+| Caso 3 | 3, 4, 7 | Tempo = 70 min, Timer iniciado, 5 flashcards | Erro: tempo máximo é 60 min |
+| Caso 4 | 1, 5, 7 | Tempo = 25 min, iniciar timer já em execução, 5 flashcards | Erro: timer já está em execução |
+| Caso 5 | 10, 14, 16 | Flashcard vinculado a matéria válida, nome da matéria vazio, sessão concluída | Operação rejeitada com mensagem de erro |
+| Caso 6 | 12, 14, 18 | Matéria inexistente, nome da matéria vazio, sessão sem duração | Operação rejeitada com mensagem de erro |
+| Caso 7 | 20, 23, 26 | Tempo abaixo de 15 min, sessão sem matéria, nenhum flashcard disponível | Operação rejeitada com mensagem de erro |
+| Caso 8 | 21, 24, 27 | Tempo acima de 60 min, matéria inválida, matéria sem flashcards | Operação rejeitada com mensagem de erro |
+| Caso 9 | 29, 32, 35 | Senha sem maiúscula, exclusão cancelada pelo usuário, sessão incompleta contabilizada | Operação rejeitada com mensagem de erro |
+| Caso 10 | 30, 33, 36 | Senha com mais de 15 caracteres, exclusão de sessão inexistente, revisão não concluída contabilizada | Operação rejeitada com mensagem de erro |
