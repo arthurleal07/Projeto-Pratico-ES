@@ -82,20 +82,38 @@ export function CreateFlashcard() {
     return null;
   };
 
-  const handleSave = () => {
-    const validationError = validateFlashcard(question, answer, subject);
+ const handleSave = () => {
+  const validationError = validateFlashcard(question, answer, subject);
 
-    if (validationError) {
-      toast.error(validationError);
-      return;
-    }
+  if (validationError) {
+    toast.error(validationError);
+    return;
+  }
 
-    // Simulate saving
-    toast.success("Flashcard criado com sucesso! ✨");
-    setTimeout(() => {
-      navigate("/flashcards");
-    }, 1000);
+  const newFlashcard = {
+    id: Date.now(),
+    subject,
+    question,
+    answer,
   };
+
+  const flashcards = JSON.parse(
+    localStorage.getItem("flashcards") || "[]"
+  );
+
+  flashcards.push(newFlashcard);
+
+  localStorage.setItem(
+    "flashcards",
+    JSON.stringify(flashcards)
+  );
+
+  toast.success("Flashcard criado com sucesso! ✨");
+
+  setTimeout(() => {
+    navigate("/flashcards");
+  }, 1000);
+};
 
   return (
     <div className="p-4 space-y-6 pb-8">
