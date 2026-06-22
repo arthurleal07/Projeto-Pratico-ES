@@ -5,7 +5,7 @@ import { Button } from "../components/ui/button";
 import { Card, CardContent } from "../components/ui/card";
 import { Progress } from "../components/ui/progress";
 
-const mockFlashcards = [
+const defaultFlashcards = [
   {
     id: 1,
     subject: "Matemática",
@@ -16,24 +16,34 @@ const mockFlashcards = [
     id: 2,
     subject: "Física",
     question: "O que é a Primeira Lei de Newton?",
-    answer: "Um corpo em repouso tende a permanecer em repouso, e um corpo em movimento tende a permanecer em movimento, a menos que uma força externa atue sobre ele.",
+    answer: "Um corpo em repouso tende a permanecer em repouso...",
   },
   {
     id: 3,
     subject: "Química",
     question: "Qual a fórmula da água?",
-    answer: "H₂O - Duas moléculas de hidrogênio e uma de oxigênio",
+    answer: "H₂O",
   },
   {
     id: 4,
     subject: "História",
     question: "Em que ano foi proclamada a República no Brasil?",
-    answer: "1889 - Proclamada pelo Marechal Deodoro da Fonseca",
+    answer: "1889",
   },
 ];
 
+
+
 export function Flashcards() {
   const navigate = useNavigate();
+  const savedFlashcards = JSON.parse(
+  localStorage.getItem("flashcards") || "[]"
+);
+
+const mockFlashcards = [
+  ...defaultFlashcards,
+  ...savedFlashcards,
+];
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showAnswer, setShowAnswer] = useState(false);
   const [correct, setCorrect] = useState(0);
