@@ -1,211 +1,128 @@
 import { useState } from "react";
-import { useNavigate } from "react-router";
-import { Brain, Mail, Lock, User } from "lucide-react";
-import { Button } from "../components/ui/button";
-import { Input } from "../components/ui/input";
-import { Label } from "../components/ui/label";
 
-export function Auth() {
-  const navigate = useNavigate();
+function validatePassword(password: string) {
+  const trimmedPassword = password.trim();
 
-  const [isLogin, setIsLogin] = useState(true);
+  if (!trimmedPassword) {
+    return "A senha não pode estar vazia.";
+  }
 
-  const [name, setName] = useState("");
+  if (trimmedPassword.length < 15) {
+    return "A senha deve possuir no mínimo 15 caracteres.";
+  }
+
+  if (!/[A-Z]/.test(trimmedPassword)) {
+    return "A senha deve conter pelo menos uma letra maiúscula.";
+  }
+
+  if (!/[0-9]/.test(trimmedPassword)) {
+    return "A senha deve conter pelo menos um número.";
+  }
+
+  if (!/[!@#$%&*]/.test(trimmedPassword)) {
+    return "A senha deve conter pelo menos um símbolo especial (!,@,#,$,%,&,*).";
+  }
+
+  return null;
+}
+
+export default function Cadastro() {
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [usuario, setUsuario] = useState("");
+  const [senha, setSenha] = useState("");
+  const [aceitouTermos, setAceitouTermos] = useState(false);
+  const [mensagem, setMensagem] = useState("");
 
-  const [error, setError] = useState("");
-
-  const validatePassword = (password: string) => {
-    const trimmedPassword = password.trim();
-
-    if (!trimmedPassword) {
-      return "A senha não pode estar vazia.";
-    }
-
-    if (trimmedPassword.length < 15) {
-      return "A senha deve possuir no mínimo 15 caracteres.";
-    }
-
-    if (!/[A-Z]/.test(trimmedPassword)) {
-      return "A senha deve conter pelo menos uma letra maiúscula.";
-    }
-
-    if (!/[0-9]/.test(trimmedPassword)) {
-      return "A senha deve conter pelo menos um número.";
-    }
-
-    if (!/[!@#$%&*]/.test(trimmedPassword)) {
-      return "A senha deve conter pelo menos um símbolo especial (!,@,#,$,%,&,*).";
-    }
-
-    return null;
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
+  function cadastrar(e: React.FormEvent) {
     e.preventDefault();
 
-    setError("");
-
-    // Validação apenas para cadastro
-    if (!isLogin) {
-      const passwordError = validatePassword(password);
-
-      if (passwordError) {
-        setError(passwordError);
-        return;
-      }
+    if (!email || !usuario || !senha) {
+      setMensagem("Preencha todos os campos.");
+      return;
     }
 
-    localStorage.setItem(
-      "user",
-      JSON.stringify({
-        name: name || "Estudante",
-        email,
-      })
-    );
+    const erroSenha = validatePassword(senha);
 
-    navigate("/home");
-  };
+    if (erroSenha) {
+      setMensagem(erroSenha);
+      return;
+    }
 
-  const handleGuest = () => {
-    localStorage.setItem(
-      "user",
-      JSON.stringify({
-        name: "Visitante",
-      })
-    );
+    if (!aceitouTermos) {
+      setMensagem("É necessário aceitar os Termos de Uso.");
+      return;
+    }
 
-    navigate("/home");
-  };
+    setMensagem("Cadastro realizado com sucesso!");
+
+  
+    console.log({
+      email,
+      usuario,
+      senha,
+    });
+  }
 
   return (
-    <div className="flex flex-col min-h-screen max-w-md mx-auto bg-background">
-      {/* Header */}
-      <div className="bg-gradient-to-br from-primary to-primary/80 text-primary-foreground px-6 py-12 rounded-b-3xl">
-        <div className="flex items-center justify-center mb-4">
-          <div className="bg-white/20 backdrop-blur-sm p-4 rounded-2xl">
-            <Brain className="w-12 h-12" />
-          </div>
+    <div className="container">
+      <h2>Cadastro</h2>
+
+      <form onSubmit={cadastrar}>
+        <div>
+          <label>Gmail</label>
+          <input
+            type="email"
+            placeholder="Digite seu Gmail"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
         </div>
 
-        <h1 className="text-2xl font-bold text-center mb-2">
-          Foca & Revisa
-        </h1>
+        <div>
+          <label>Usuário</label>
+          <input
+            type="text"
+            placeholder="Nome de usuário"
+            value={usuario}
+            onChange={(e) => setUsuario(e.target.value)}
+          />
+        </div>
 
-        <p className="text-center text-sm opacity-90">
-          {isLogin ? "Bem-vindo de volta!" : "Crie sua conta"}
+        <div>
+          <label>Senha</label>
+          <input
+            type="password"
+            placeholder="Digite sua senha"
+            value={senha}
+            onChange={(e) => setSenha(e.target.value)}
+          />
+        </div>
+
+        <div style={{ marginTop: "10px" }}>
+          <input
+            type="checkbox"
+            checked={aceitouTermos}
+            onChange={(e) => setAceitouTermos(e.target.checked)}
+          />
+
+          <label>
+            {" "}Li e aceito os{" "}
+            <a href="/termos-de-uso" target="_blank">
+              Termos de Uso
+            </a>
+          </label>
+        </div>
+
+        <button type="submit" style={{ marginTop: "20px" }}>
+          Cadastrar
+        </button>
+      </form>
+
+      {mensagem && (
+        <p style={{ marginTop: "20px", color: "red" }}>
+          {mensagem}
         </p>
-      </div>
-
-      {/* Form */}
-      <div className="flex-1 px-6 py-8">
-        <form onSubmit={handleSubmit} className="space-y-4">
-
-          {!isLogin && (
-            <div className="space-y-2">
-              <Label htmlFor="name">Nome</Label>
-
-              <div className="relative">
-                <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
-
-                <Input
-                  id="name"
-                  type="text"
-                  placeholder="Seu nome"
-                  className="pl-10"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                />
-              </div>
-            </div>
-          )}
-
-          <div className="space-y-2">
-            <Label htmlFor="email">E-mail</Label>
-
-            <div className="relative">
-              <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
-
-              <Input
-                id="email"
-                type="email"
-                placeholder="seu@email.com"
-                className="pl-10"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-            </div>
-          </div>
-
-          <div className="space-y-2">
-            <Label htmlFor="password">Senha</Label>
-
-            <div className="relative">
-              <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
-
-              <Input
-                id="password"
-                type="password"
-                placeholder="••••••••"
-                className="pl-10"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-            </div>
-          </div>
-
-          {error && (
-            <div className="text-sm text-red-500 font-medium">
-              {error}
-            </div>
-          )}
-
-          <Button
-            type="submit"
-            className="w-full mt-6"
-          >
-            {isLogin ? "Entrar" : "Criar conta"}
-          </Button>
-        </form>
-
-        {/* Toggle */}
-        <div className="mt-4 text-center">
-          <button
-            onClick={() => {
-              setIsLogin(!isLogin);
-              setError("");
-            }}
-            className="text-sm text-primary hover:underline"
-          >
-            {isLogin
-              ? "Não tem conta? Criar conta"
-              : "Já tem conta? Entrar"}
-          </button>
-        </div>
-
-        {/* Divider */}
-        <div className="relative my-6">
-          <div className="absolute inset-0 flex items-center">
-            <div className="w-full border-t border-border"></div>
-          </div>
-
-          <div className="relative flex justify-center text-sm">
-            <span className="px-4 bg-background text-muted-foreground">
-              ou
-            </span>
-          </div>
-        </div>
-
-        {/* Guest */}
-        <Button
-          onClick={handleGuest}
-          variant="outline"
-          className="w-full"
-        >
-          Continuar sem conta
-        </Button>
-      </div>
+      )}
     </div>
   );
 }
