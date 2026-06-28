@@ -23,8 +23,8 @@ export function Auth() {
       return "A senha não pode estar vazia.";
     }
 
-    if (trimmedPassword.length > 15) {
-      return "A senha deve possuir no máximo 15 caracteres.";
+    if (trimmedPassword.length < 15) {
+      return "A senha deve possuir no mínimo 15 caracteres.";
     }
 
     if (!/[A-Z]/.test(trimmedPassword)) {

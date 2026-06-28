@@ -1,16 +1,17 @@
 import { Outlet, useLocation, useNavigate } from "react-router";
-import { Home, Clock, CreditCard, Calendar, FileText, BarChart3, Settings } from "lucide-react";
+import { Home, Clock, CreditCard, Calendar, BookOpen, Settings, } from "lucide-react";
 
 export function Layout() {
   const location = useLocation();
   const navigate = useNavigate();
 
   const navItems = [
-    { icon: Home, label: "Início", path: "/home" },
-    { icon: Clock, label: "Pomodoro", path: "/pomodoro" },
-    { icon: CreditCard, label: "Cards", path: "/flashcards" },
-    { icon: Calendar, label: "Agenda", path: "/agenda" },
-  ];
+  { icon: Home, label: "Início", path: "/home" },
+  { icon: BookOpen, label: "Matérias", path: "/materias" },
+  { icon: Clock, label: "Pomodoro", path: "/pomodoro" },
+  { icon: CreditCard, label: "Cards", path: "/flashcards" },
+  { icon: Calendar, label: "Agenda", path: "/agenda" },
+];
 
   return (
     <div className="flex flex-col h-screen max-w-md mx-auto bg-background">

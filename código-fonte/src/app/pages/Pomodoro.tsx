@@ -25,7 +25,7 @@ export function Pomodoro() {
   const progress = ((totalSeconds - currentSeconds) / totalSeconds) * 100;
 
   useEffect(() => {
-    let interval: NodeJS.Timeout;
+    let interval: ReturnType<typeof setInterval> | undefined;
 
     if (isActive) {
       interval = setInterval(() => {
@@ -51,7 +51,9 @@ export function Pomodoro() {
       }, 1000);
     }
 
-    return () => clearInterval(interval);
+    return () => {
+      if (interval) clearInterval(interval);
+    };
   }, [isActive, minutes, seconds, isBreak, focusMinutes]);
 
   const handleReset = () => {

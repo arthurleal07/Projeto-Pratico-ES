@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router";
 import { Splash } from "./pages/Splash";
 import { Auth } from "./pages/Auth";
 import { Home } from "./pages/Home";
+import { Materias } from "./pages/Materias"; // NOVO IMPORT
 import { Pomodoro } from "./pages/Pomodoro";
 import { Flashcards } from "./pages/Flashcards";
 import { CreateFlashcard } from "./pages/CreateFlashcard";
@@ -26,6 +27,10 @@ export const router = createBrowserRouter([
       {
         path: "/home",
         element: <Home />,
+      },
+      {
+        path: "/materias",
+        element: <Materias />,
       },
       {
         path: "/pomodoro",
