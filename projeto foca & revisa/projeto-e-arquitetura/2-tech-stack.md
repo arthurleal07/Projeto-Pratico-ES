@@ -9,7 +9,7 @@ O **Tech Stack Map** é um mapa visual e documentado de todas as tecnologias, fe
 ---
 ## imagem do nosso tech stack map
 
-<img width="9950" height="3669" alt="FOCA   REVISA" src="https://github.com/user-attachments/assets/2680e743-6e63-4368-83e3-e1415b02e776" />
+<img width="1692" height="665" alt="Captura de tela 2026-06-30 214930" src="https://github.com/user-attachments/assets/bc44f831-fd6d-4d74-95c6-b0ca0aa3b637" />
 
 ---
 ## Para que ele funciona
@@ -33,7 +33,7 @@ O Tech Stack Map é importante porque evita decisões técnicas dispersas e sem 
 
 ### Front end
 
-<img width="2772" height="1758" alt="front end" src="https://github.com/user-attachments/assets/565ae2d8-eca3-4dbe-ac3c-d2c373b1615e" />
+<img width="537" height="342" alt="Captura de tela 2026-06-30 214942" src="https://github.com/user-attachments/assets/92833eba-7c2f-41ce-9115-d4b5cab3471e" />
 
 ### Back end
 
