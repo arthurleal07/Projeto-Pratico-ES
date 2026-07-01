@@ -19,7 +19,9 @@
   <a href="#-introdução-do-projeto">Introdução</a> •
   <a href="#-ias-utilizadas-no-projeto">IAs utilizadas</a> •
   <a href="#-tp1">TP1</a> •
-  <a href="#-tp2">TP2</a>
+  <a href="#-tp2">TP2</a> •
+  <a href="#-tp3">TP3</a> •
+  <a href="#-tp4">TP4</a>
 </p>
 
 ---
@@ -72,3 +74,31 @@ Durante o desenvolvimento, contamos com o apoio das seguintes ferramentas de int
 | 7️⃣ Rastreabilidade | [Acessar](https://github.com/arthurleal07/Projeto-Pratico-ES/blob/main/projeto%20foca%20%26%20revisa/projeto-e-arquitetura/7-rastreabilidade.md) |
 
 ---
+
+---
+
+## 📁 TP3
+
+> Documentação referente aos casos de teste e técnicas de projeto de testes utilizadas no desenvolvimento.
+
+| Documento | Link |
+|---|---|
+| 📂 Pasta geral | [Acessar](https://github.com/arthurleal07/Projeto-Pratico-ES/tree/main/casos-de-testes) |
+| 1️⃣ Casos de Teste | [Acessar](https://github.com/arthurleal07/Projeto-Pratico-ES/tree/main/casos-de-testes) |
+| 2️⃣ Classes de Equivalência | [Acessar](https://github.com/arthurleal07/Projeto-Pratico-ES/blob/main/casos-de-testes/classes-equivalencia.md) |
+
+---
+
+## 📁 TP4
+
+> Entrega do MVP do aplicativo, incluindo telas, rastreabilidade, refatorações, documentação final e código-fonte.
+
+| Documento | Link |
+|---|---|
+| 📂 Pasta geral | [Acessar](https://github.com/arthurleal07/Projeto-Pratico-ES/tree/main/docs-MVP) |
+| 1️⃣ Telas do App | [Acessar](https://github.com/arthurleal07/Projeto-Pratico-ES/tree/main/docs-MVP/Telas%20do%20App) |
+| 2️⃣ Rastreabilidade | [Acessar](https://github.com/arthurleal07/Projeto-Pratico-ES/blob/main/docs-MVP/rastreabilidade.md) |
+| 3️⃣ Refatorações | [Acessar](https://github.com/arthurleal07/Projeto-Pratico-ES/blob/main/docs-MVP/refatora%C3%A7%C3%B5es.md) |
+| 4️⃣ Termos de Uso | [Acessar](https://github.com/arthurleal07/Projeto-Pratico-ES/blob/main/docs-MVP/termos-de-uso.md) |
+| 5️⃣ Vídeo de Demonstração | [Acessar](https://github.com/arthurleal07/Projeto-Pratico-ES/blob/main/docs-MVP/video_demonstra%C3%A7%C3%A3o.md) |
+| 6️⃣ Código-fonte | [Acessar](https://github.com/arthurleal07/Projeto-Pratico-ES/tree/main/c%C3%B3digo-fonte/src) |
