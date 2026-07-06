@@ -27,6 +27,7 @@ function lerLocalStorage() {
   return { ciclosTotal, ciclosHoje, primeiraRevisao };
 }
 
+
 function calcularConquistas(): Conquista[] {
   const { ciclosTotal, ciclosHoje, primeiraRevisao } = lerLocalStorage();
 
